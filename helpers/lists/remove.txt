@@ -1,3 +1,5 @@
+boot/ramdisk/
+recovery/ramdisk/
 system_ext/etc/mmi/
 system_ext/etc/nano/
 system_ext/etc/selinux/
@@ -197,3 +199,4 @@ vendor/package/
 vendor/rfs/
 vendor/speccfg/
 vendor/usr/
+vendor_boot/ramdisk/
