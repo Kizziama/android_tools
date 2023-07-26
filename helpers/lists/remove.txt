@@ -132,6 +132,7 @@ vendor/lib/hw/memtrack.
 vendor/lib/hw/nfc_nci.nqx.default.so
 vendor/lib/hw/thermal.
 vendor/lib/hw/vr.default.so
+vendor/lib/libprotobuf-cpp
 vendor/lib/libqsap_sdk.so
 vendor/lib/modules/
 vendor/lib/vendor.display.config@
@@ -182,6 +183,7 @@ vendor/lib64/hw/memtrack.
 vendor/lib64/hw/nfc_nci.nqx.default.so
 vendor/lib64/hw/thermal.
 vendor/lib64/hw/vr.default.so
+vendor/lib64/libprotobuf-cpp
 vendor/lib64/libqsap_sdk.so
 vendor/lib64/modules/
 vendor/lib64/nfc_nci.nqx.default.hw.so
