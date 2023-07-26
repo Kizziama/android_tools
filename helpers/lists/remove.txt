@@ -194,9 +194,11 @@ vendor/lib64/vendor.qti.hardware.wifi
 vendor/lib64/vendor.qti.hardware.wigig
 vendor/media/
 vendor/odm/
+vendor/odm_dlkm/
 vendor/overlay/
 vendor/package/
 vendor/rfs/
 vendor/speccfg/
 vendor/usr/
+vendor/vendor_dlkm/
 vendor_boot/ramdisk/
