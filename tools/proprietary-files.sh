@@ -361,6 +361,9 @@ search_blobs | get_hardware_module "${gps_targets[@]}" | add_to_section GPS
 search_blobs | grep -iE "etc/permissions/com.qti.location.sdk.xml|etc/permissions/com.qualcomm.location.xml|etc/permissions/izat.xt.srv.xml|etc/permissions/privapp-permissions-com.qualcomm.location.xml|framework/com.qti.location.sdk.jar|framework/izat.xt.srv.jar|lib64/liblocationservice_jni.so|lib64/libxt_native.so" | add_to_section GPS
 search_blobs | grep "vendor/" | grep -iE "libizat_|liblowi_|libloc_|liblocation" | add_to_section GPS
 
+# GPS-Configs
+search_blobs | grep -iE "vendor/etc/gnss" | add_to_section GPS-Configs
+
 # Graphics
 graphics_targets=(
     "hw/vulkan"
