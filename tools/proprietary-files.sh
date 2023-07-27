@@ -475,6 +475,7 @@ search_blobs | grep "vendor/" | grep -iE "radio/" | grep -v "vendor.qti.hardware
 radioims_targets=(
     "com.qualcomm.qti.imscmservice"
     "com.qualcomm.qti.uceservice"
+    "hardware.mmagent"
     "radio.ims"
     "qti.ims"
 )
