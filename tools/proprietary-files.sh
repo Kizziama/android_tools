@@ -67,6 +67,9 @@ get_hardware_module() {
     done
 }
 
+# AAL
+search_blobs | grep -iE "vendor/lib|vendor/lib64" | grep -i "aal" | add_to_section AAL
+
 # AEE
 aee_targets=(
     "hardware.aee"
