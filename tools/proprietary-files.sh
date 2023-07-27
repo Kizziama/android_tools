@@ -399,6 +399,12 @@ nvram_targets=(
 )
 search_blobs | get_hardware_module "${nvram_targets[@]}" | add_to_section NVRAM
 
+# Network-Optimisation
+nwk_targets=(
+    "hardware.nwk_opt"
+)
+search_blobs | get_hardware_module "${nwk_targets[@]}" | add_to_section Network-Optimisation
+
 # Neural-networks
 nn_targets=(
     "hardware.neuralnetworks"
