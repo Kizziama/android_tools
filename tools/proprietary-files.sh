@@ -276,9 +276,11 @@ search_blobs | grep "vendor/" | grep -i "em_hidl" | add_to_section Engineer-Mode
 
 # Factory
 factory_targets=(
+    "interfaces.factory"
     "vendor.qti.hardware.factory"
 )
-search_blobs | get_hardware_module "${factory_targets[@]}" | add_to_section Factory
+search_blobs | grep "vendor/" | get_hardware_module "${factory_targets[@]}" | add_to_section Factory
+search_blobs | grep "vendor/" | grep -i "factory" | add_to_section Factory
 
 # Fido
 search_blobs | grep "vendor/" | grep -iE "fido" | add_to_section Fido
