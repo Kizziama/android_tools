@@ -580,6 +580,9 @@ search_blobs | grep -iE "lib/|lib64" | grep -iE "libdiag_system.so|librcc.so|lib
 search_blobs | grep -iE "priv-app/ims/ims.apk|priv-app/imssettings/imssettings.apk|vendor/bin/ims_rtp_daemon|vendor/bin/imsdatadaemon|vendor/bin/imsqmidaemon|vendor/bin/imsrcsd|vendor/bin/ims_rtp_daemon" | add_to_section Radio-IMS
 search_blobs | grep "vendor/" | grep -iE "imsrtpservice|imscmservice|uceservice|lib-ims" | add_to_section Radio-IMS
 
+# Radio-Configs
+search_blobs | grep -iE "vendor/etc/mdota" | add_to_section Radio-Configs
+
 # Samsung
 search_blobs | grep "vendor/" | grep -iE "samsung|SoundAlive" | grep -v "vendor/etc/qdcm_calib" | grep -v "vendor/etc/dsi" | grep -v "vendor/firmware/" | add_to_section Samsung
 search_blobs | grep "odm/" | grep -iE "samsung" | add_to_section Samsung
