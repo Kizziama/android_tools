@@ -492,7 +492,10 @@ search_blobs | grep "vendor/" | grep -iE "libqmi" | add_to_section QMI
 
 # Radio
 radio_targets=(
+    "hardware.mdmonitor"
+    "hardware.mtkradio"
     "hardware.mms"
+    "hardware.netdagent"
     "hardware.radio"
 )
 search_blobs | get_hardware_module "${radio_targets[@]}" | grep -v "ims" | add_to_section Radio
