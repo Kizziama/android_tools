@@ -611,6 +611,7 @@ search_blobs | grep "vendor/" | grep -iE "wifidisplayhal|wfdservice|libwfd|wfdco
 
 # WiFi
 wifi_targets=(
+    "hardware.apmonitor"
     "hardware.wifi"
     "hardware.wigig"
 )
