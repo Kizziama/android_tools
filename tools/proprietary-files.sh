@@ -111,7 +111,7 @@ search_blobs | get_hardware_module "${atrace_targets[@]}" | add_to_section Atrac
 
 # Audio
 search_blobs | grep -iE "etc/permissions/audiosphere.xml|framework/audiosphere.jar" | add_to_section Audio
-search_blobs | grep "vendor/" | grep -iE "libtinycompress|tfa98xx|libsrsprocessing|libaudio|libacdb|libdirac|etc/dirac|etc/sony_effect/|etc/drc/|etc/surround_sound_3mic/" | grep -v "lib/rfsa/adsp" | grep -v "lib/modules/" | add_to_section Audio
+search_blobs | grep "vendor/" | grep -iE "libtinycompress|tfa98xx|libsrsprocessing|libaudio|libacdb|libdirac|etc/dirac|etc/sony_effect/|etc/drc/|etc/surround_sound_3mic/" | grep -v "lib/rfsa/adsp" | grep -v "lib/modules/" | grep -v "soundfx" | add_to_section Audio
 search_blobs | grep "odm/" | grep -iE "awinic|libhaptic|libdirac|etc/dirac" | add_to_section Audio
 
 # Audio-ACDB
@@ -130,6 +130,9 @@ audio_targets=(
 search_blobs | get_hardware_module "${audio_targets[@]}" | grep -v "bluetooth" | add_to_section Audio-Hardware
 search_blobs | grep -iE "vendor/lib/|vendor/lib64/" | grep -iE "libaudio_log_utils.so|libtinycompress_vendor.so|libqcompostprocbundle.so|libqcomvisualizer.so|libqcomvoiceprocessing.so|libvolumelistener.so" | add_to_section Audio-Hardware
 search_blobs | grep -iE "vendor/lib/|vendor/lib64/" | grep -i "atci" | add_to_section Audio-Hardware
+
+# Audio-SoundFX
+search_blobs | grep -iE "vendor/lib/soundfx|vendor/lib64/soundfx" | add_to_section Audio-SoundFX
 
 # Bluetooth
 bluetooth_targets=(
