@@ -316,6 +316,9 @@ factory_targets=(
 search_blobs | grep "vendor/" | get_hardware_module "${factory_targets[@]}" | add_to_section Factory
 search_blobs | grep "vendor/" | grep -i "factory" | add_to_section Factory
 
+# Factory-Configs
+search_blobs | grep -iE "vendor/etc/mmigroup" | add_to_section Factory-Configs
+
 # Fido
 search_blobs | grep "vendor/" | grep -iE "fido" | add_to_section Fido
 search_blobs | grep "odm/" | grep -iE "fido" | add_to_section Fido
