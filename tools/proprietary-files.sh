@@ -265,6 +265,12 @@ search_blobs | grep -iE "firmware/cppf|firmware/widevine|mediadrm/|qcdrm/|lib/li
 # DTS
 search_blobs | grep "vendor/" | grep -iE "etc/dts/|libdts|libomx-dts" | add_to_section DTS
 
+# Dumpstate
+dumpstate_targets=(
+    "hardware.dumpstate"
+)
+search_blobs | get_hardware_module "${dumpstate_targets[@]}" | add_to_section Dumpstate
+
 # ESE-Powermanager
 search_blobs | grep -iE "lib/|lib64/|vendor/" | grep -iE "esepowermanager" | add_to_section ESE-Powermanager
 
