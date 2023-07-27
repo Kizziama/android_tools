@@ -267,6 +267,13 @@ search_blobs | grep "vendor/" | grep -iE "etc/dts/|libdts|libomx-dts" | add_to_s
 # ESE-Powermanager
 search_blobs | grep -iE "lib/|lib64/|vendor/" | grep -iE "esepowermanager" | add_to_section ESE-Powermanager
 
+# Engineer-Mode
+em_targets=(
+    "hardware.engineermode"
+)
+search_blobs | get_hardware_module "${em_targets[@]}" | add_to_section Engineer-Mode
+search_blobs | grep "vendor/" | grep -i "em_hidl" | add_to_section Engineer-Mode
+
 # Factory
 factory_targets=(
     "vendor.qti.hardware.factory"
