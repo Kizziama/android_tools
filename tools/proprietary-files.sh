@@ -184,6 +184,9 @@ search_blobs | grep -iE "vendor/lib/libmmcamera|vendor/lib64/libmmcamera" | add_
 # CDSP
 search_blobs | grep "vendor/" | grep -iE "cdsprpc|libcdsp|libsdsprpc|libfastrpc|libsdsprpc|libsysmon" | add_to_section CDSP
 
+# Certs
+search_blobs | grep "vendor/etc/" | grep -i "certs" | add_to_section Certs
+
 # Charge
 charge_targets=(
     "hardware.charge"
