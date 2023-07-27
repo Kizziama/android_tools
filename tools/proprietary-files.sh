@@ -374,6 +374,13 @@ listen_targets=(
 search_blobs | get_hardware_module "${listen_targets[@]}" | add_to_section Listen
 search_blobs | grep "vendor/" | grep -iE "liblisten" | add_to_section Listen
 
+# Log
+log_targets=(
+    "hardware.log"
+)
+search_blobs | get_hardware_module "${log_targets[@]}" | add_to_section Log
+search_blobs | grep "vendor/" | grep -i "loghidl" | add_to_section Log
+
 # Machine-Learning
 search_blobs | grep "vendor/" | grep -iE "mlshal" | add_to_section Machine-Learning
 
