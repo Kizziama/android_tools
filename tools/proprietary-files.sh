@@ -157,6 +157,12 @@ bootctrl_targets=(
 search_blobs | get_hardware_module "${bootctrl_targets[@]}" | add_to_section Bootctrl
 search_blobs | grep "vendor/" | grep -iE "bootctrl|libmtk_bsg|mtk_plpath" | add_to_section Bootctrl
 
+# CAS
+cas_targets=(
+    "hardware.cas"
+)
+search_blobs | get_hardware_module "${cas_targets[@]}" | add_to_section CAS
+
 # Camera blobs
 camera_targets=(
     "hardware.camera"
