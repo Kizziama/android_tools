@@ -144,6 +144,13 @@ search_blobs | grep "vendor/" | grep -iE "libbthost_if|btnvtool|hci_qcomm_init|w
 # Bluetooth-AptX
 search_blobs | grep -iE "aptx" | grep -v "lib/rfsa/adsp" | add_to_section Bluetooth-AptX
 
+# Bootctrl
+bootctrl_targets=(
+    "hardware.boot"
+)
+search_blobs | get_hardware_module "${bootctrl_targets[@]}" | add_to_section Bootctrl
+search_blobs | grep "vendor/" | grep -iE "bootctrl|libmtk_bsg|mtk_plpath" | add_to_section Bootctrl
+
 # Camera blobs
 camera_targets=(
     "hardware.camera"
