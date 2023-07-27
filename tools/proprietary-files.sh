@@ -73,6 +73,13 @@ aee_targets=(
 )
 search_blobs | get_hardware_module "${aee_targets[@]}" | add_to_section AEE
 
+# APU
+apu_targets=(
+    "hardware.apu"
+)
+search_blobs | get_hardware_module "${apu_targets[@]}" | add_to_section APU
+search_blobs | grep "vendor/" | grep -i "apu" | grep -iv "audio" | add_to_section APU
+
 # ADSP
 search_blobs | grep -iE "vendor/lib/|vendor/lib64/|bin/adsprpcd" | grep -iE "libadsp|ibfastcv|adsprpc|mdsprpc|sdsprpc" | grep -v "scve" | grep -v "lib/rfsa/adsp" | add_to_section ADSP
 search_blobs | grep -iE "odm/lib/|odm/lib64/|bin/adsprpcd" | grep -iE "libadsp|ibfastcv|adsprpc|mdsprpc|sdsprpc" | grep -v "scve" | grep -v "lib/rfsa/adsp" | add_to_section ADSP
