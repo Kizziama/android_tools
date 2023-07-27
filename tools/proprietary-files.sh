@@ -357,6 +357,7 @@ search_blobs | grep "vendor/" | grep -iE "mlshal" | add_to_section Machine-Learn
 
 # Media
 media_targets=(
+    "hardware.media"
     "vendor.qti.hardware.vpp"
 )
 search_blobs | get_hardware_module "${media_targets[@]}" | add_to_section Media
