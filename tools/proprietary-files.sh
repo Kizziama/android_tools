@@ -393,6 +393,12 @@ search_blobs | grep -v "vendor/" | grep -iE "app/NxpNfcNci/NxpNfcNci.apk|app/Nxp
 search_blobs | grep "vendor/" | grep -iE "libpn5|nfc|secure_element|etc/libese|nxp|libp61|ls_client" | grep -v "etc/permissions/android.hardware.nfc" | add_to_section NFC
 search_blobs | grep "odm/" | grep -iE "libpn5|nfc|secure_element|etc/libese|etc/sn100u|etc/init/init.SN100|nxp|libp61|ls_client|jcos_nq|ese_spi|ls_nq|se_nq|libchrome" | grep -v "etc/permissions/android.hardware.nfc" | add_to_section NFC
 
+# NVRAM
+nvram_targets=(
+    "hardware.nvram"
+)
+search_blobs | get_hardware_module "${nvram_targets[@]}" | add_to_section NVRAM
+
 # Neural-networks
 nn_targets=(
     "hardware.neuralnetworks"
