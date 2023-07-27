@@ -566,6 +566,7 @@ search_blobs | grep "vendor/" | grep -iE "seccam" | add_to_section Seccam
 
 # Sensors
 sensors_targets=(
+    "frameworks.sensorservice"
     "hardware.sensors"
     "hw/activity_recognition"
     "hw/sensors"
