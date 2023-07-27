@@ -223,6 +223,7 @@ search_blobs | grep -iE "vendor/etc/qdcm_calib" | add_to_section Display-calibra
 # Display-Hardware
 display_targets=(
     "frameworks.bufferhub"
+    "hardware.composer"
     "hardware.display"
     "hardware.graphics"
     "hardware.memtrack"
