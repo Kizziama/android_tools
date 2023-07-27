@@ -428,6 +428,12 @@ search_blobs | grep "odm/" | grep -iE "oplus|ffmpeg|orms|libav|libdav|libsw|dpse
 # Oplus
 search_blobs | grep "vendor/" | grep -iE "oplus" | add_to_section Oplus
 
+# PQ
+pq_targets=(
+    "hardware.pq"
+)
+search_blobs | get_hardware_module "${pq_targets[@]}" | add_to_section PQ
+
 # Pasrmanager
 search_blobs | grep "vendor/" | grep -iE "pasrmanager" | add_to_section Pasrmanager
 
