@@ -162,6 +162,12 @@ search_blobs | grep -iE "vendor/lib/libmmcamera|vendor/lib64/libmmcamera" | add_
 # CDSP
 search_blobs | grep "vendor/" | grep -iE "cdsprpc|libcdsp|libsdsprpc|libfastrpc|libsdsprpc|libsysmon" | add_to_section CDSP
 
+# Charge
+charge_targets=(
+    "hardware.charge"
+)
+search_blobs | get_hardware_module "${charge_targets[@]}" | add_to_section Charge
+
 # Charger
 search_blobs | grep -iE "vendor/bin/hvdcp_opti|vendor/charge/chargemon/" | add_to_section Charger
 search_blobs | grep -iE "bin/kpoc_charger|lib/libshowlogo.so|etc/init/kpoc_charger.rc" | add_to_section Charger
