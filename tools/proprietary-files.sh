@@ -445,6 +445,7 @@ search_blobs | get_hardware_module "${postprocessing_targets[@]}" | add_to_secti
 
 # Power-Hardware
 power_targets=(
+    "hardware.mtkpower"
     "hardware.power"
     "hw/power"
 )
