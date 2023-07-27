@@ -191,6 +191,7 @@ search_blobs | get_hardware_module "${configstore_targets[@]}" | add_to_section 
 # Consumerir
 consumerir_targets=(
     "hardware.consumerir"
+    "hardware.ir"
     "hw/consumerir"
 )
 search_blobs | get_hardware_module "${consumerir_targets[@]}" | add_to_section Consumerir
