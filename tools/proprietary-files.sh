@@ -605,6 +605,12 @@ search_blobs | grep "vendor/" | grep -iE "tui_comm" | add_to_section TUI
 # UBWC
 search_blobs | grep "vendor/" | grep -iE "libUBWC.so|libstreamparser.so" | add_to_section UBWC
 
+# USB
+usb_targets=(
+    "hardware.usb"
+)
+search_blobs | get_hardware_module "${usb_targets[@]}" | add_to_section USB
+
 # Vibrator
 vibrator_targets=(
     "hardware.vibrator"
