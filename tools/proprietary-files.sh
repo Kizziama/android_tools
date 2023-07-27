@@ -123,11 +123,13 @@ search_blobs | grep -iE "odm/etc/audio" | add_to_section Audio-configs
 
 # Audio-Hardware
 audio_targets=(
+    "hardware.atci"
     "hardware.audio"
     "hw/audio"
 )
 search_blobs | get_hardware_module "${audio_targets[@]}" | grep -v "bluetooth" | add_to_section Audio-Hardware
 search_blobs | grep -iE "vendor/lib/|vendor/lib64/" | grep -iE "libaudio_log_utils.so|libtinycompress_vendor.so|libqcompostprocbundle.so|libqcomvisualizer.so|libqcomvoiceprocessing.so|libvolumelistener.so" | add_to_section Audio-Hardware
+search_blobs | grep -iE "vendor/lib/|vendor/lib64/" | grep -i "atci" | add_to_section Audio-Hardware
 
 # Bluetooth
 bluetooth_targets=(
