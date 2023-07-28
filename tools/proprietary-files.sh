@@ -629,6 +629,7 @@ search_blobs | grep "vendor/" | grep -iE "bin/ssr_|subsystem" | add_to_section S
 
 # Thermal
 search_blobs | grep "vendor/" | grep -iE "etc/thermal|bin/thermal|libthermal|bin/mi_thermald|thermal" | grep -v "hw/thermal" | add_to_section Thermal
+search_blobs | grep "vendor/etc/.tp" | add_to_section Thermal
 
 # Thermal-Hardware
 search_blobs | grep "vendor/" | grep -iE "lib/hw/thermal|lib64/hw/thermal" | add_to_section Thermal-Hardware
