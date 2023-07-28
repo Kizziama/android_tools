@@ -75,6 +75,7 @@ aee_targets=(
     "hardware.aee"
 )
 search_blobs | get_hardware_module "${aee_targets[@]}" | add_to_section AEE
+search_blobs | grep "vendor/" | grep -i "aee" | add_to_section AEE
 
 # APU
 apu_targets=(
