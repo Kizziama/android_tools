@@ -188,6 +188,7 @@ search_blobs | grep -iE "vendor/lib/libois|vendor/lib64/libois" | add_to_section
 search_blobs | grep -iE "vendor/lib/libmmcamera|vendor/lib64/libmmcamera" | add_to_section Camera-sensors
 search_blobs | grep "vendor/" | grep -iE "camerahalserver" | add_to_section Camera
 search_blobs | grep -iE "vendor/lib|vendor/lib64" | grep -iE "_raw_" | add_to_section Camera
+search_blobs | grep -iE "vendor/|odm/" | grep -ie "lib3a" | add_to_section Camera
 
 # CDSP
 search_blobs | grep "vendor/" | grep -iE "cdsprpc|libcdsp|libsdsprpc|libfastrpc|libsdsprpc|libsysmon" | add_to_section CDSP
