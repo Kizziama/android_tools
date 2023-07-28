@@ -584,6 +584,7 @@ search_blobs | grep "vendor/" | grep -iE "imsrtpservice|imscmservice|uceservice|
 
 # Radio-Configs
 search_blobs | grep -iE "vendor/etc/mdota" | add_to_section Radio-Configs
+search_blobs | grep -iE "vendor/etc/" | grep -iE "ecc|apdb|spn|apn|smsdb|nhw|pws" | grep -v "seccomp_policy/" | add_to_section Radio-Configs
 
 # Samsung
 search_blobs | grep "vendor/" | grep -iE "samsung|SoundAlive" | grep -v "vendor/etc/qdcm_calib" | grep -v "vendor/etc/dsi" | grep -v "vendor/firmware/" | add_to_section Samsung
