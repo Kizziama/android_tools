@@ -323,6 +323,7 @@ search_blobs | grep "vendor/" | grep -i "em_hidl" | add_to_section Engineer-Mode
 
 # Factory
 factory_targets=(
+    "interfaces.customNvService"
     "interfaces.factory"
     "vendor.qti.hardware.factory"
 )
