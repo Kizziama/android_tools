@@ -574,6 +574,7 @@ search_blobs | get_hardware_module "${radio_targets[@]}" | grep -v "ims" | add_t
 search_blobs | grep -iE "app/QtiTelephonyService/QtiTelephonyService.apk|app/datastatusnotification/datastatusnotification.apk|app/embms/embms.apk|etc/permissions/embms.xml|etc/permissions/privapp-permissions-qti.xml|etc/permissions/qcrilhook.xml|etc/permissions/telephonyservice.xml|etc/sysconfig/qti_whitelist.xml|priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk" | add_to_section Radio
 search_blobs | grep "framework/" | grep -iE "QtiTelephonyServicelibrary|embmslibrary|qcnvitems|qcrilhook|qti-telephony-common" | grep ".jar" | add_to_section Radio
 search_blobs | grep "vendor/" | grep -iE "radio/" | grep -v "vendor.qti.hardware.radio.ims" | add_to_section Radio
+search_blobs | grep "vendor/" | grep -iE "netmgr|ril|gsm" | add_to_section Radio
 
 # Radio-IMS
 radioims_targets=(
@@ -585,6 +586,7 @@ radioims_targets=(
     "hardware.mmagent"
     "hardware.rcs"
     "hardware.videotelephony"
+    "hw/vtservice"
     "radio.ims"
     "qti.ims"
 )
@@ -594,10 +596,11 @@ search_blobs | grep -iE "framework/qti-vzw-ims-internal" | add_to_section Radio-
 search_blobs | grep -iE "lib/|lib64" | grep -iE "libdiag_system.so|librcc.so|lib-ims|libimscamera_jni|libimsmedia_jni|lib-dplmedia.so|lib-rtp|lib-siputility" | grep -v "priv-app/" | add_to_section Radio-IMS
 search_blobs | grep -iE "priv-app/ims/ims.apk|priv-app/imssettings/imssettings.apk|vendor/bin/ims_rtp_daemon|vendor/bin/imsdatadaemon|vendor/bin/imsqmidaemon|vendor/bin/imsrcsd|vendor/bin/ims_rtp_daemon" | add_to_section Radio-IMS
 search_blobs | grep "vendor/" | grep -iE "imsrtpservice|imscmservice|uceservice|lib-ims" | add_to_section Radio-IMS
+search_blobs | grep "vendor/" | grep -iE "volte|rcs" | add_to_section Radio-IMS
 
 # Radio-Configs
 search_blobs | grep -iE "vendor/etc/mdota" | add_to_section Radio-Configs
-search_blobs | grep -iE "vendor/etc/" | grep -iE "ecc|apdb|spn|apn|smsdb|nhw|pws" | grep -v "seccomp_policy/" | add_to_section Radio-Configs
+search_blobs | grep -iE "vendor/etc/" | grep -iE "ecc|apdb|spn|apn|smsdb|nhw|pws|mnl" | grep -v "seccomp_policy/" | add_to_section Radio-Configs
 
 # Samsung
 search_blobs | grep "vendor/" | grep -iE "samsung|SoundAlive" | grep -v "vendor/etc/qdcm_calib" | grep -v "vendor/etc/dsi" | grep -v "vendor/firmware/" | add_to_section Samsung
