@@ -117,7 +117,8 @@ search_blobs | get_hardware_module "${atrace_targets[@]}" | add_to_section Atrac
 search_blobs | grep -iE "etc/permissions/audiosphere.xml|framework/audiosphere.jar" | add_to_section Audio
 search_blobs | grep "vendor/" | grep -iE "libtinycompress|tfa98xx|libsrsprocessing|libaudio|libacdb|libdirac|etc/dirac|etc/sony_effect/|etc/drc/|etc/surround_sound_3mic/" | grep -v "lib/rfsa/adsp" | grep -v "lib/modules/" | grep -v "soundfx" | add_to_section Audio
 search_blobs | grep "vendor/" | grep -i "atci" | add_to_section Audio
-search_blobs | grep -iE "vendor/lib/|vendor/lib64/" | grep -i "speech" | add_to_section Audio 
+search_blobs | grep -iE "vendor/lib/|vendor/lib64/" | grep -i "speech" | add_to_section Audio
+search_blobs | grep "vendor/" | grep -iE "misound" | grep -iEv "soundfx/" | add_to_section Audio
 search_blobs | grep "odm/" | grep -iE "awinic|libhaptic|libdirac|etc/dirac" | add_to_section Audio
 
 # Audio-ACDB
