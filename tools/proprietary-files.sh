@@ -192,7 +192,7 @@ search_blobs | grep "vendor/" | grep -iE "motor" | grep -v "odex" | grep -v "vde
 search_blobs | grep -iE "vendor/lib/libois|vendor/lib64/libois" | add_to_section Camera-ois
 search_blobs | grep -iE "vendor/lib/libmmcamera|vendor/lib64/libmmcamera" | add_to_section Camera-sensors
 search_blobs | grep "vendor/" | grep -iE "camerahalserver" | add_to_section Camera
-search_blobs | grep -iE "vendor/lib|vendor/lib64" | grep -iE "_raw_" | add_to_section Camera
+search_blobs | grep -iE "vendor/lib|vendor/lib64" | grep -iE "_raw_|libfeature" | add_to_section Camera
 search_blobs | grep -iE "vendor/|odm/" | grep -ie "lib3a" | add_to_section Camera
 
 # CDSP
