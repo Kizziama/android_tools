@@ -630,6 +630,21 @@ search_blobs | grep "vendor/" | grep -iE "soter" | add_to_section Soter
 # SSR
 search_blobs | grep "vendor/" | grep -iE "bin/ssr_|subsystem" | add_to_section SSR
 
+# TEE
+tee_targets=(
+    "hardware.thh"
+    "trustonic.tee"
+)
+search_blobs | get_hardware_module "${tee_targets[@]}" | add_to_section TEE
+search_blobs | grep -iE "vendor/lib|vendor/lib64" | grep -iE "tee|microtrust|trustonic|beanpod|mcDriver|libMc|libgz" | add_to_section TEE
+search_blobs | grep -iE "vendor/bin" | grep -iE "teei_|mcDriver" | add_to_section TEE
+
+# TEE-McRegistry
+search_blobs | grep -i "vendor/app/mcRegistry" | add_to_section TEE-mcRegistry
+
+# TEE-TA
+search_blobs | grep -i "vendor/thh/ta" | add_to_section TEE-TA
+
 # Thermal
 search_blobs | grep "vendor/" | grep -iE "etc/thermal|bin/thermal|libthermal|bin/mi_thermald|thermal" | grep -v "hw/thermal" | add_to_section Thermal
 search_blobs | grep "vendor/etc/.tp" | add_to_section Thermal
