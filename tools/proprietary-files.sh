@@ -455,6 +455,7 @@ search_blobs | get_hardware_module "${media_targets[@]}" | add_to_section Media
 search_blobs | grep -iE "lib/|lib64/" | grep -iE "extractors/libmmparser.so|libFileMux.so|libOmxMux.so|libmmosal.so|ibmmparser_lite.so|libmmrtpdecoder.so|libmmrtpencoder.so" | add_to_section Media
 search_blobs | grep "vendor/" | grep -iE "libvpp" | add_to_section Media
 search_blobs | grep "vendor/" | grep -iE "libstagefright|codec" | add_to_section Media
+search_blobs | grep -iE "vendor/lib/|vendor/lib64/" | grep -iE "libgz|hevc|libh264dec|libhdr|libimage|libjpeg|libmp3|libmp4" | add_to_section Media
 
 # Meizu
 search_blobs | grep "vendor/" | grep -iE "meizu" | add_to_section Meizu
@@ -648,7 +649,7 @@ tee_targets=(
     "trustonic.tee"
 )
 search_blobs | get_hardware_module "${tee_targets[@]}" | add_to_section TEE
-search_blobs | grep -iE "vendor/lib|vendor/lib64" | grep -iE "tee|microtrust|trustonic|beanpod|mcDriver|libMc|libgz" | add_to_section TEE
+search_blobs | grep -iE "vendor/lib|vendor/lib64" | grep -iE "tee|microtrust|trustonic|beanpod|mcDriver|libMc" | add_to_section TEE
 search_blobs | grep -iE "vendor/bin" | grep -iE "teei_|mcDriver" | add_to_section TEE
 
 # TEE-McRegistry
