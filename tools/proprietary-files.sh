@@ -119,6 +119,7 @@ search_blobs | grep "vendor/" | grep -iE "libtinycompress|tfa98xx|libsrsprocessi
 search_blobs | grep "vendor/" | grep -i "atci" | add_to_section Audio
 search_blobs | grep -iE "vendor/lib/|vendor/lib64/" | grep -i "speech" | add_to_section Audio
 search_blobs | grep "vendor/" | grep -iE "misound" | grep -iEv "soundfx/" | add_to_section Audio
+search_blobs | grep "vendor/bin/" | grep -iE "calibration" | add_to_section Audio
 search_blobs | grep "odm/" | grep -iE "awinic|libhaptic|libdirac|etc/dirac" | add_to_section Audio
 
 # Audio-ACDB
