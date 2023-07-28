@@ -350,6 +350,7 @@ gatekeeper_targets=(
     "hw/gatekeeper"
 )
 search_blobs | get_hardware_module "${gatekeeper_targets[@]}" | add_to_section Gatekeeper
+search_blobs | grep -iE "vendor/lib|vendor/lib64" | grep -iE "gatekeeper." | add_to_section Gatekeeper
 
 # Google
 search_blobs | grep "vendor/" | grep -iE "google" | grep -v "etc/media_codecs_google" | add_to_section Google
@@ -398,7 +399,7 @@ keymaster_targets=(
     "hw/keystore"
 )
 search_blobs | get_hardware_module "${keymaster_targets[@]}" | add_to_section Keymaster
-search_blobs | grep "vendor/" | grep -iE "keymaster|keystore|libspcom" | add_to_section Keymaster
+search_blobs | grep "vendor/" | grep -iE "keymaster|keystore|libspcom|kmsetkey|libsoft_attestation_cert" | add_to_section Keymaster
 search_blobs | grep "odm/" | grep -iE "libtrustonic_keybox_ca" | add_to_section Keymaster
 
 # Latency
