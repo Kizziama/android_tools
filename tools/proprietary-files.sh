@@ -442,6 +442,7 @@ media_targets=(
 search_blobs | get_hardware_module "${media_targets[@]}" | add_to_section Media
 search_blobs | grep -iE "lib/|lib64/" | grep -iE "extractors/libmmparser.so|libFileMux.so|libOmxMux.so|libmmosal.so|ibmmparser_lite.so|libmmrtpdecoder.so|libmmrtpencoder.so" | add_to_section Media
 search_blobs | grep "vendor/" | grep -iE "libvpp" | add_to_section Media
+search_blobs | grep "vendor/" | grep -iE "libstagefright|codec" | add_to_section Media
 
 # Meizu
 search_blobs | grep "vendor/" | grep -iE "meizu" | add_to_section Meizu
